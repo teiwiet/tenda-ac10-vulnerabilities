@@ -81,7 +81,7 @@ data = {"lanIp": "192.168.0.1"}
 requests.post(url, data=data)
 # Result: httpd daemon crashes
 ```
-![httpd daemon crash - stack corruption](crash.png)
+![httpd daemon crash - stack corruption](images/crash.png)
 ## Suggested Fix
 
 - The `GetValue` API must pass the destination buffer size and bound the copy accordingly, e.g. `strncpy(param_2, local_5f4, dst_len - 1)` with an explicit `dst_len` parameter, rejecting or truncating values that exceed it.
