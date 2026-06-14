@@ -1,4 +1,4 @@
-# [Vendor] [Product] [Firmware Version] — `fromAdvSetLanip` GetValue/SetValue Stack-Based Buffer Overflow
+# [TENDA] [AC10 V4.0] [US_AC10V4.0si_V16.03.10.09_multi_TDE01] — `fromAdvSetLanip` GetValue/SetValue Stack-Based Buffer Overflow
 
 ## Summary
 
