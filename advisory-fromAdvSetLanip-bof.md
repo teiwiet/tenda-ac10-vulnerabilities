@@ -92,4 +92,4 @@ requests.post(url, data=data)
 | Date | Event |
 |---|---|
 | 2026-06-13 | Vulnerability discovered |
-| 2026-06-14 | Vendor notified |
+| 2026-06-14 | Vendor notified(productsecure@tenda.cn) |
