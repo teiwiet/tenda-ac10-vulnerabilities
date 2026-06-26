@@ -51,8 +51,10 @@ Unauthenticated access to all protected endpoints:
 No authentication required.
 
 ![Poc1](images/poc1.png)
-![Poc1](images/poc2.png)
-![Poc1](images/poc3.png)
+
+![Poc2](images/poc2.png)
+
+![Poc3](images/poc3.png)
 
 Expected response without bypass: HTTP 302 redirect to `login.html`.  
 Observed response with bypass: HTTP 200 with handler output.
