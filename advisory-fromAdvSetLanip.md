@@ -67,8 +67,7 @@ A persisted value of several hundred bytes (well within the 1499-byte SET limit)
 Stack memory corruption leading to denial of service (confirmed process crash). Overwrite of the saved return address is possible; arbitrary code execution may be achievable subject to the platform's exploit mitigations, but has **not** been demonstrated.
 
 ## Proof of Concept
-
-**Prerequisites:** Administrator access to the web interface.
+All requests below are sent within an authenticated administrator session (valid session cookie included); the overflow triggers as long as such a session is active.
 
 ```python
 import requests
