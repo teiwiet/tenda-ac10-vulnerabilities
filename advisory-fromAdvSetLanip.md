@@ -2,7 +2,7 @@
 
 ## Summary
 
-A stack-based buffer overflow exists in the web management interface of `[Product]`. The HTTP handler `fromAdvSetLanip` stores attacker-controlled values into NVRAM without length validation, and the configuration read routine backing `GetValue` copies stored values into fixed-size stack buffers using the *source* length as the copy bound, ignoring the destination buffer's actual capacity. An authenticated administrator can persist an oversized configuration value and trigger memory corruption when that value is subsequently read into an undersized stack buffer. The issue has been confirmed to crash the affected process.
+A stack-based buffer overflow exists in the web management interface of `Tenda AC10`. The HTTP handler `fromAdvSetLanip` stores attacker-controlled values into NVRAM without length validation, and the configuration read routine backing `GetValue` copies stored values into fixed-size stack buffers using the *source* length as the copy bound, ignoring the destination buffer's actual capacity. An authenticated administrator can persist an oversized configuration value and trigger memory corruption when that value is subsequently read into an undersized stack buffer. The issue has been confirmed to crash the affected process.
 
 ## Vulnerability Type
 
