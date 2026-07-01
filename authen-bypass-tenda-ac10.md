@@ -26,7 +26,7 @@ An authentication bypass exists in the web management interface of Tenda AC10 V4
 
 ![httpd Vulnerability](images/httpd_vuln.png)
 
-Because `strstr` searches the entire raw URL including the query string, appending `?img/main-logo.png` to any request URL satisfies the check and causes the handler to return 0 (pass) without performing any credential verification.
+Because `strstr` searches the entire raw URL including the query string, appending `?reasy-ui-1.0.3.js` or `?img/main-logo.png` to any request URL satisfies the check and causes the handler to return 0 (pass) without performing any credential verification.
 
 The downstream dispatch in `webCgiDoUpload` and `websFormHandler` receives only the path component and routes normally, so the bypass is transparent to all subsequent handlers.
 
