@@ -7,7 +7,7 @@ An authentication bypass exists in the web management interface of Tenda AC10 V4
 ## Vulnerability Type
 
 - **CWE-287:** Improper Authentication
-- **CWE-697:** Incorrected Comparison
+- **CWE-697:** Incorrect Comparison
 
 ## Affected Component
 
