@@ -7,14 +7,14 @@ An authentication bypass exists in the web management interface of Tenda AC10 V4
 ## Vulnerability Type
 
 - **CWE-287:** Improper Authentication
-- **CWE-184:** Incomplete List of Disallowed Inputs
+- **CWE-697:** Incorrected Comparison
 
 ## Affected Component
 
 | Field | Value |
 |---|---|
 | Vendor | Tenda |
-| Product | Tetsted on AC10 V4.0/AC10 V5.0 |
+| Product | Tested on AC10 V4.0/AC10 V5.0 |
 | Firmware version | `US_AC10V4.0si_V16.03.10.09_multi_TDE01.bin` |
 | Binary | `httpd` |
 | Handler | `R7WebsSecurityHandler` |
@@ -43,7 +43,7 @@ Unauthenticated access to all protected endpoints:
 |---|---|
 | `/cgi-bin/DownloadCfg` | Download device configuration |
 | `/cgi-bin/DownloadLog` | Download system logs |
-| `/cgi-bin/upgrade` | Firmware upload without authentication |
+| `/cgi-bin/upgrade` | Reachable |
 | `/goform/*` | All administrative setters (LAN, WiFi, DHCP, DNS, VPN) |
 
 ## Proof of Concept
