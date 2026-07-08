@@ -14,7 +14,7 @@ An authentication bypass exists in the web management interface of Tenda AC10 V4
 | Field | Value |
 |---|---|
 | Vendor | Tenda |
-| Product | Tested on AC10 V4.0/AC10 V5.0 |
+| Product | Tested on Router AC10 V4.0 |
 | Firmware version | `US_AC10V4.0si_V16.03.10.09_multi_TDE01.bin` |
 | Binary | `httpd` |
 | Handler | `R7WebsSecurityHandler` |
